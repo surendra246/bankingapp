@@ -14,6 +14,7 @@ const routes: Routes = [
   },
   //adding lazy loading proccess
   {path:'transaction/:id',loadChildren:()=>import('./views/payment-history/payment-history.module').then(m=>m.PaymentHistoryModule)},
+  {path:'transfer-fund',loadChildren:()=>import('./views/transfer-fund/transfer-fund.module').then(m=>m.TransferFundModule)},
   {
     path: 'login', component: LoginComponent
   },
