@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewsComponent } from './views.component';
 import { TransferFundComponent } from './transfer-fund/transfer-fund.component';
 
+
 const routes: Routes = [
   {
     path: '',
