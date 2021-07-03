@@ -1,8 +1,8 @@
 {
   "/customers": "/customers",
-  "/customers/:id": "/customers/:id",
-  "/account_details": "/accounts",
-  "/account_details/:id": "/accounts/?account_number=:id",
+  "/customer/:id": "/customers/:id",
+  "/accounts_detail": "/accounts",
+  "/account_detail/:id": "/accounts/?account_number=:id",
   "/transactions": "/transactions",
-  "/transactions/:id": "/transactions/?from_account=:id"
+  "/transaction/:id": "/transactions/?from_account=:id"
 }
