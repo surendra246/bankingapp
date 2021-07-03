@@ -1,0 +1,58 @@
+<div class="container">
+    <section>
+        <div class="card">        
+            <div class=" card-body">
+                <div class="row">
+                    <div class="title">
+                        <div class="row">
+                            <div class="col">
+                                <h4><b>Account History</b></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Account Number:</div>
+                    <div class="col-md-8">{{acountinfo.account_number}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Account Balance:</div>
+                    <div class="col-md-8">{{acountinfo.account_number}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Current Date:</div>
+                    <div class="col-md-8">{{acountinfo.account_number}}:</div>
+                </div>
+            </div>
+            <div class=" card-body">
+            <div class="row">
+                <div class="col-md-12"><h4>List of 10 Last Transaction</h4></div>
+            </div>
+            <div class="row pb-10">
+                <div class="col-md-row">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Customer Account Number</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Debit/Credit</th>
+                            <th scope="col">Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let transaction of transactionData; index as i;">
+                            <th scope="row">1</th>
+                            <td>{{transaction.to_account}}</td>
+                            <td>{{transaction.amount}}</td>
+                            <td>Dr</td>
+                            <td></td>
+                          </tr>                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</div>
