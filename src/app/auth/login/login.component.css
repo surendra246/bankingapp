@@ -1,7 +1,16 @@
+.login-form{
+    height:600px;
+}
+
 .login-box {
     border: 1px solid #aeaeb8;
     border-radius: 10px;
     padding: 3%;
+    margin:auto;
+}
+
+.login-box-parent {
+    display: flex;
 }
 
 .submit-button {
@@ -12,4 +21,12 @@
 .invalid-feedback {
     width: 100%;
     color: red;
+}
+
+.password {
+    margin-top:2%;
+}
+
+.sign-in {
+    margin-top:2%;
 }
