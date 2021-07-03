@@ -23,24 +23,31 @@
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Origin Account" formControlName="from_account"
-            [class.alert-danger]="(fudTransferFormControls.from_account.touched || isSubmitted) && fudTransferFormControls.from_account.errors?.required">
+            <input type="text" class="form-control" placeholder="Origin Account" formControlName="from_account">
+            <div *ngIf="fudTransferFormControls.from_account.touched && fudTransferFormControls.from_account.invalid" class="alert alert-danger">
+              <div *ngIf="fudTransferFormControls.from_account.errors.required">Origin Account is required.</div>
+            </div>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Destination Account" formControlName="to_account"
-            [class.alert-danger]="(fudTransferFormControls.to_account.touched || isSubmitted) && fudTransferFormControls.to_account.errors?.required">
+            <input type="text" class="form-control" placeholder="Destination Account" formControlName="to_account">
+            <div *ngIf="fudTransferFormControls.to_account.touched && fudTransferFormControls.to_account.invalid" class="alert alert-danger">
+              <div *ngIf="fudTransferFormControls.to_account.errors.required">Destination Account is required.</div>
+            </div>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Amount" formControlName="amount"
-            [class.alert-danger]="(fudTransferFormControls.amount.touched || isSubmitted) && fudTransferFormControls.amount.errors?.required">
+            <input type="text" class="form-control" placeholder="Amount" formControlName="amount">
+            <div *ngIf="fudTransferFormControls.amount.touched && fudTransferFormControls.amount.invalid" class="alert alert-danger">
+              <div *ngIf="fudTransferFormControls.amount.errors.required">Amount is required.</div>
+              <div *ngIf="fudTransferFormControls.amount.errors.pattern">Enter only number.</div>
+            </div>
           </div>
         </div>
       </div>
