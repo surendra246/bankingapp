@@ -14,9 +14,11 @@ export class PaymentHistoryComponent implements OnInit {
   acountinfo:any;
   customerId:Number=0
   transactionData:any;
+  currentDate:any;
   constructor(private activeRoute:ActivatedRoute, private appService: ServicesService) { }
 
   ngOnInit(): void {
+    this.currentDate = new Date();
     //fetch the account number from query string for retriving customer info
     this.activeRoute.params.subscribe((params:any)=>{
       //statement check if custome id found
@@ -24,18 +26,17 @@ export class PaymentHistoryComponent implements OnInit {
         this.customerId = params.id;
         this.getCustomerAccountInfo(this.customerId);
         //check account number
-        if(this.acountinfo.account_number!=""){
-          this.getTransactionDetails(this.acountinfo.account_number);
-        }        
+          this.getTransactionDetails(this.customerId);
       }//end statement
     })//nd API method
   }
 
   //Get customer account details
   getCustomerAccountInfo(id:any){
-    this.appService.getCustomerById(id).subscribe((data:any)=>{
+    this.appService.getCustomerAccountDetails(id).subscribe((data:any)=>{
       //assigning data for rendering account info.
-      this.acountinfo = data;
+      //console.log("data::",data);
+      this.acountinfo = data[0];
     })
   }//end function statement
 
@@ -44,6 +45,7 @@ export class PaymentHistoryComponent implements OnInit {
     //calling api method
     this.appService.getSearchResult(acountNumber).subscribe((data:any)=>{
       //assigning data for rendering.
+      //console.log("data::",data);
       this.transactionData = data;
     })
   }//end function statement
