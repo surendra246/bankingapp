@@ -33,7 +33,7 @@ export class TransferFundComponent implements OnInit {
     this.fundTransferFrom = this.fb.group({
       from_account: ['', [Validators.required]],
       to_account: ['', [Validators.required]],
-      amount: ['', [Validators.required]],
+      amount: ['', [Validators.required, Validators.pattern("^[1-9][0-9]*$")]],
       comment: [''],
       date: [new Date().getTime()]
     });
@@ -45,12 +45,6 @@ export class TransferFundComponent implements OnInit {
 
   confirm() {
     this.isSubmitted = true;
-    if (this.fundTransferFrom.value.amount < 0) {
-      this.error = true;
-      this.success = false;
-      this.errorMsg = 'Invalid Amount';
-      return;
-    }
     this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.from_account).subscribe(
       res => {
         if (res.length === 0) {
@@ -74,6 +68,7 @@ export class TransferFundComponent implements OnInit {
                   this.success = true;
                   this.successMsg = 'Fund Transfer Successfull';
                   this.isSubmitted = false;
+                  this.fundTransferFrom.reset();
                 }
               },
               err => {
