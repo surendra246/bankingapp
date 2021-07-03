@@ -7,6 +7,7 @@ import { ViewsComponent } from './views.component';
 import { TransferFundComponent } from './transfer-fund/transfer-fund.component';
 
 import { ServicesService } from '../core/service.service';
+import { LoginComponent } from '../auth/login/login.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ServicesService } from '../core/service.service';
   ],
   declarations: [
       ViewsComponent,
-      TransferFundComponent
+      TransferFundComponent,
+      LoginComponent
   ],
   providers: [
     ServicesService
