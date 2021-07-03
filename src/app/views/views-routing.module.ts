@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: '', component: ViewsComponent,
     children: [
+      // Route Configuration for dashboard
       {
         path: '', redirectTo: '/dashboard', pathMatch: 'full'
       },
