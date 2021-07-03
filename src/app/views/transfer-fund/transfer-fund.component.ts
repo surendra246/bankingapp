@@ -31,10 +31,11 @@ export class TransferFundComponent implements OnInit {
   // Function to initialize Fund Transfer From
   initForm() {
     this.fundTransferFrom = this.fb.group({
-      originAccount: ['', [Validators.required]],
-      destinationAccount: ['', [Validators.required]],
+      from_account: ['', [Validators.required]],
+      to_account: ['', [Validators.required]],
       amount: ['', [Validators.required]],
-      comment: ['']
+      comment: [''],
+      date: [new Date().getTime()]
     });
   }
 
@@ -50,7 +51,7 @@ export class TransferFundComponent implements OnInit {
       this.errorMsg = 'Invalid Amount';
       return;
     }
-    this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.originAccount).subscribe(
+    this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.from_account).subscribe(
       res => {
         if (res.length === 0) {
           this.error = true;
@@ -58,7 +59,7 @@ export class TransferFundComponent implements OnInit {
           this.errorMsg = 'Invalid Origin Account Details';
           return;
         }
-        this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.destinationAccount).subscribe(
+        this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.to_account).subscribe(
           res => {
            if (res.length === 0) {
              this.error = true;
@@ -94,5 +95,4 @@ export class TransferFundComponent implements OnInit {
       }
     )
   }
-
 }

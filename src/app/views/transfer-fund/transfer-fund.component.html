@@ -23,16 +23,16 @@
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Origin Account" formControlName="originAccount"
-            [class.alert-danger]="(fudTransferFormControls.originAccount.touched || isSubmitted) && fudTransferFormControls.originAccount.errors?.required">
+            <input type="text" class="form-control" placeholder="Origin Account" formControlName="from_account"
+            [class.alert-danger]="(fudTransferFormControls.from_account.touched || isSubmitted) && fudTransferFormControls.from_account.errors?.required">
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Destination Account" formControlName="destinationAccount"
-            [class.alert-danger]="(fudTransferFormControls.destinationAccount.touched || isSubmitted) && fudTransferFormControls.destinationAccount.errors?.required">
+            <input type="text" class="form-control" placeholder="Destination Account" formControlName="to_account"
+            [class.alert-danger]="(fudTransferFormControls.to_account.touched || isSubmitted) && fudTransferFormControls.to_account.errors?.required">
           </div>
         </div>
       </div>
