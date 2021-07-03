@@ -19,9 +19,12 @@ const routes: Routes = [
       },
       {
         path: 'transfer-fund', component: TransferFundComponent
-      }
-    ]
-  }
+      },
+      {
+        path: '', redirectTo: '/login', pathMatch: 'full'
+      },
+    ],
+  },
 ];
 
 @NgModule({

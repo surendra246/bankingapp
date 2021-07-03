@@ -21,20 +21,14 @@ export class LoginComponent implements OnInit {
 
   // on submit this logic check user credentials are autorized or not
   onSubmit() {
-    this.servicesService.getAllCustomers().subscribe((data) => {
+    this.servicesService.getAllCustomers().subscribe((data) => {      
       for (let obj of data) {
-        if (obj.customer_id.localeCompare(this.model.customerid) == -1) {
+        if (obj.customer_id.localeCompare(this.model.customerid) == -1 || obj.password.localeCompare(this.model.password) == -1) {
           alert('Please enter valid Credentials');
           break;
-        } else if (obj.customer_id.localeCompare(this.model.customerid) == 0) {
+        } else if (obj.customer_id.localeCompare(this.model.customerid) == 0 && obj.password.localeCompare(this.model.password) == 0) {
           let myurl = '/dashboard';
-          this.router.navigate([myurl, obj.id]).then((e) => {
-            if (e) {
-              console.log('Navigation is successful!');
-            } else {
-              console.log('Navigation has failed!');
-            }
-          });
+          this.router.navigate([myurl, obj.id]);
         }
       }
     });
