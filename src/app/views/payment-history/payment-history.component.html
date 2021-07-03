@@ -13,22 +13,26 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">Account Number:</div>
-                    <div class="col-md-8">{{acountinfo.account_number}}</div>
+                    <div class="col-md-8" *ngIf="acountinfo">{{acountinfo.account_number}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">Account Balance:</div>
-                    <div class="col-md-8">{{acountinfo.account_number}}</div>
+                    <div class="col-md-8" *ngIf="acountinfo">{{acountinfo.account_fund}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4">Current Date:</div>
-                    <div class="col-md-8">{{acountinfo.account_number}}:</div>
+                    <div class="col-md-4">Bank Name:</div>
+                    <div class="col-md-8" *ngIf="acountinfo">{{acountinfo.bank_name}}:</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Branch Name:</div>
+                    <div class="col-md-8" *ngIf="acountinfo">{{acountinfo.branch_name}}:</div>
                 </div>
             </div>
             <div class=" card-body">
             <div class="row">
                 <div class="col-md-12"><h4>List of 10 Last Transaction</h4></div>
             </div>
-            <div class="row pb-10">
+            <div class="row pb-10" *ngIf="transactionData">
                 <div class="col-md-row">
                     <table class="table">
                         <thead>
@@ -46,7 +50,7 @@
                             <td>{{transaction.to_account}}</td>
                             <td>{{transaction.amount}}</td>
                             <td>Dr</td>
-                            <td></td>
+                            <td>{{currentDate | date:'yyyy-MM-dd'}}</td>
                           </tr>                          
                         </tbody>
                       </table>
