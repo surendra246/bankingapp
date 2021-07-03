@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 //created service class
 export class ServicesService {
+  accountNumber:any;
   //Inject HttpClient into constructor for access API method 
   constructor(private http: HttpClient ) {}
 
@@ -30,7 +31,12 @@ export class ServicesService {
 
   //fetch login customer details
   getCustomerById(id:any){
-    return this.http.get<any>(this.configUrl+'customer/'+id)
+    return this.http.get<any>(this.configUrl+'customer/'+id);
+  }
+
+  //fetch account Info BY customer ID
+  getCustomerAccountInfoById(id:any){
+    return this.http.get<any>(this.configUrl+'account_detail/customer/'+id);
   }
 
   //fetch customer account details by ID
