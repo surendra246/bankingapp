@@ -1,0 +1,6 @@
+{
+  "/customers"s: "/customers",
+  "/customer/:id": "/customers/:id",
+  "/account_details": "/account_details",
+  "/account_details/:id": "/account_details/?customer_id",
+}
