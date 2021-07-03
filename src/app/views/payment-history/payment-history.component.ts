@@ -15,6 +15,8 @@ export class PaymentHistoryComponent implements OnInit {
   customerId:Number=0
   transactionData:any;
   currentDate:any;
+  totalAmount:number=0;
+  account:number=0;
   constructor(private activeRoute:ActivatedRoute, private appService: ServicesService) { }
 
   ngOnInit(): void {
@@ -27,6 +29,8 @@ export class PaymentHistoryComponent implements OnInit {
         this.getCustomerAccountInfo(this.customerId);
         //check account number
           this.getTransactionDetails(this.customerId);
+          //get balance amount          
+          this.getAccountBalance(this.customerId);
       }//end statement
     })//nd API method
   }
@@ -49,4 +53,15 @@ export class PaymentHistoryComponent implements OnInit {
       this.transactionData = data;
     })
   }//end function statement
+
+  getAccountBalance(account:any){ 
+      this.appService.getAllTransactions().subscribe((accountdata:any)=>{
+        accountdata.forEach((data: any) => {          
+          if (data.from_account == account) {
+            this.totalAmount += parseInt(data.amount);
+          }
+        });
+      })
+   
+  }
 }
