@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ViewsRouteModule } from './views-routing.module';
 import { ViewsComponent } from './views.component';
+import { LoginComponent } from '../auth/login/login.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { ViewsComponent } from './views.component';
       ReactiveFormsModule
   ],
   declarations: [
-      ViewsComponent
+      ViewsComponent,
+      LoginComponent
   ],
   providers: [],
   bootstrap: [ViewsComponent]
