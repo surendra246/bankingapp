@@ -4,6 +4,20 @@
     <div class="form-header text-center">
       <h2>Transfer Funds</h2>
     </div>
+    <div class=" row justify-content-center" *ngIf="error">
+      <div class="col-6">
+        <div class="alert alert-danger" >
+          <p>{{errorMsg}}</p>
+        </div>
+      </div>
+    </div>
+    <div class=" row justify-content-center" *ngIf="success">
+      <div class="col-6">
+        <div class="alert alert-success" >
+          <p>{{successMsg}}</p>
+        </div>
+      </div>
+    </div>
     <!-- Fund transfer Form -->
     <form [formGroup]="fundTransferFrom">
       <div class="row justify-content-center">

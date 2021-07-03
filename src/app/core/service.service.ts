@@ -48,4 +48,9 @@ export class ServicesService {
     return this.http.get<any>(`${this.configUrl}account_detail/customer/${custId}`);
   }
 
+  // fund trasfer api
+  transferFunds(data: Object) {
+    return this.http.post<any>(`${this.configUrl}transactions`, data);
+  }
+
 }//end service class
