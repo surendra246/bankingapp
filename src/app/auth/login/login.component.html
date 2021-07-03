@@ -9,7 +9,7 @@
                         #customerid="ngModel" [ngClass]="{ 'is-invalid': f.submitted && customerid.invalid }"
                         required />
                     <div *ngIf="f.submitted && customerid.invalid" class="invalid-feedback">
-                        <div *ngIf="customerid.errors?.required">First Name is required</div>
+                        <div *ngIf="customerid.errors?.required">Customer ID is required</div>
                     </div>
 
                     <label for="exampleFormControlInput1" class="password">Password</label>
