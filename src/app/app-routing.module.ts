@@ -13,7 +13,7 @@ const routes: Routes = [
     component:PaymentHistoryComponent
   },
   //adding lazy loading proccess
-  {path:'transaction/:id',loadChildren:()=>import('./views/payment-history/payment-history.module').then(m=>m.PaymentHistoryModule)}
+  {path:'transaction/:id',loadChildren:()=>import('./views/payment-history/payment-history.module').then(m=>m.PaymentHistoryModule)},
   {
     path: 'login', component: LoginComponent
   },
