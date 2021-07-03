@@ -35,7 +35,7 @@ export class PaymentHistoryComponent implements OnInit {
   getCustomerAccountInfo(id:any){
     this.appService.getCustomerAccountDetails(id).subscribe((data:any)=>{
       //assigning data for rendering account info.
-      console.log("data::",data);
+      //console.log("data::",data);
       this.acountinfo = data[0];
     })
   }//end function statement
@@ -45,7 +45,7 @@ export class PaymentHistoryComponent implements OnInit {
     //calling api method
     this.appService.getSearchResult(acountNumber).subscribe((data:any)=>{
       //assigning data for rendering.
-      console.log("data::",data);
+      //console.log("data::",data);
       this.transactionData = data;
     })
   }//end function statement
