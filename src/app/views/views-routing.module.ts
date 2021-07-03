@@ -8,6 +8,7 @@ const routes: Routes = [
     path: '',
     component: ViewsComponent,
     children: [
+      // Route Configuration for dashboard
       {
         path: 'dashboard',
         component: DashboardComponent,
