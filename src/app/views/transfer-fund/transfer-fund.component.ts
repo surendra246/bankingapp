@@ -10,7 +10,7 @@ export class TransferFundComponent implements OnInit {
 
   // Initialization of form
   fundTransferFrom: any;
-
+  isSubmitted: boolean = false;
   // Defining FormBuilder with variable fb
   constructor(
     private fb: FormBuilder
@@ -30,12 +30,12 @@ export class TransferFundComponent implements OnInit {
     });
   }
 
-  get formControls() {
+  get fudTransferFormControls() {
     return this.fundTransferFrom.controls;
   }
 
   confirm() {
-
+    this.isSubmitted = true;
   }
 
 }

@@ -9,21 +9,24 @@
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Origin Account" formControlName="originAccount">
+            <input type="text" class="form-control" placeholder="Origin Account" formControlName="originAccount"
+            [class.alert-danger]="(fudTransferFormControls.originAccount.touched || isSubmitted) && fudTransferFormControls.originAccount.errors?.required">
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Destination Account" formControlName="destinationAccount">
+            <input type="text" class="form-control" placeholder="Destination Account" formControlName="destinationAccount"
+            [class.alert-danger]="(fudTransferFormControls.destinationAccount.touched || isSubmitted) && fudTransferFormControls.destinationAccount.errors?.required">
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Amount" formControlName="amount">
+            <input type="text" class="form-control" placeholder="Amount" formControlName="amount"
+            [class.alert-danger]="(fudTransferFormControls.amount.touched || isSubmitted) && fudTransferFormControls.amount.errors?.required">
           </div>
         </div>
       </div>
@@ -37,7 +40,7 @@
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <button class="btn btn-primary w-100" (click)="confirm()">Confirm</button>
+            <button class="btn btn-primary w-100" [disabled]="fundTransferFrom.invalid" (click)="confirm()">Confirm</button>
           </div>
         </div>
       </div>

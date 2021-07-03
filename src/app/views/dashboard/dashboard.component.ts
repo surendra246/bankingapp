@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.service.getCustomerAccountDetails(this.route.snapshot.paramMap.get('id')).subscribe(
+    this.service.getAccountByCustomerId(this.route.snapshot.paramMap.get('id')).subscribe(
       res => {
         this.customerDetails = res[0];
       }

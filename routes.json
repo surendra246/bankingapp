@@ -4,5 +4,6 @@
   "/accounts_detail": "/accounts",
   "/account_detail/:id": "/accounts/?account_number=:id",
   "/transactions": "/transactions",
-  "/transaction/:id": "/transactions/?from_account=:id"
+  "/transaction/:id": "/transactions/?from_account=:id",
+  "/account_detail/customer/:custId": "/accounts/?customer_id=:custId"
 }
