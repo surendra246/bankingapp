@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ ActivatedRoute } from '@angular/router';
+import{ ActivatedRoute, Router } from '@angular/router';
 
 import { ServicesService } from '../../core/service.service';
 
@@ -15,7 +15,8 @@ export class DashboardComponent implements OnInit {
   //Inject ServicesService into constructor for access API calls
   constructor(
     private service: ServicesService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -24,5 +25,16 @@ export class DashboardComponent implements OnInit {
         this.customerDetails = res[0];
       }
     );
+  }
+
+  navigate(type: string) {
+    switch (type) {
+      case 'accountdetails':
+        this.router.navigate([`transaction/${this.customerDetails.account_number}`])
+        break;
+      case 'fundtransfer':
+        this.router.navigate([`transfer-fund`]);
+        break;
+    }
   }
 }

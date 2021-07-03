@@ -14,11 +14,11 @@
     <div class="row">
       <div class="col-6">
         <!-- Account Details Button Section -->
-        <a class="btn btn-primary w-100 dashboard-btn" routerLink="">Account Details</a>
+        <a class="btn btn-primary w-100 dashboard-btn" (click)="navigate('accountdetails');">Account Details</a>
       </div>
       <div class="col-6">
         <!-- Transfer Amount Button Section -->
-        <a class="btn btn-primary w-100 dashboard-btn" routerLink="/transfer-fund">Transfer Amount</a>
+        <a class="btn btn-primary w-100 dashboard-btn" (click)="navigate('fundtransfer');">Transfer Amount</a>
       </div>
     </div>
   </div>
