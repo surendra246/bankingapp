@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  model: any = {};
+
   onSubmit() {
     alert('SUCCESS!! :-)\n\n' )
   }
