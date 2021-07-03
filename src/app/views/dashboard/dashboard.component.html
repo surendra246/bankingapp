@@ -1,13 +1,24 @@
 <div class="container">
   <div class="dashboard-container">
     <div class="row">
+      <div class="col-4">
+        <p>Account Number: {{customerDetails?.account_number}}</p>
+      </div>
+      <div class="col-4">
+        <p>Bank Name: {{customerDetails?.bank_name}}</p>
+      </div>
+      <div class="col-4">
+        <p>Branch Name: {{customerDetails?.branch_name}}</p>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-6">
         <!-- Account Details Button Section -->
         <a class="btn btn-primary w-100 dashboard-btn" routerLink="">Account Details</a>
       </div>
       <div class="col-6">
         <!-- Transfer Amount Button Section -->
-        <a class="btn btn-primary w-100 dashboard-btn" routerLink="">Transfer Amount</a>
+        <a class="btn btn-primary w-100 dashboard-btn" routerLink="/transfer-fund">Transfer Amount</a>
       </div>
     </div>
   </div>
