@@ -14,7 +14,6 @@
 }
 
 .submit-button {
-    float: right;
     margin-right: 2%;
 }
 
@@ -29,4 +28,6 @@
 
 .sign-in {
     margin-top:2%;
+    float: right;
+    padding-right: 5%;
 }
