@@ -17,7 +17,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">Account Balance:</div>
-                    <div class="col-md-8" *ngIf="acountinfo">{{acountinfo.account_fund}}</div>
+                    <div class="col-md-8" *ngIf="acountinfo">{{acountinfo.account_fund -  totalAmount}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">Bank Name:</div>
