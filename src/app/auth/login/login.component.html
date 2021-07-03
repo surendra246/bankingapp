@@ -13,7 +13,7 @@
                     </div>
 
                     <label for="exampleFormControlInput1" class="password">Password</label>
-                    <input type="text" class="form-control" name="password" [(ngModel)]="model.password"
+                    <input type="password" class="form-control" name="password" [(ngModel)]="model.password"
                         #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required />
                     <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
                         <div *ngIf="password.errors?.required">Password is required</div>
