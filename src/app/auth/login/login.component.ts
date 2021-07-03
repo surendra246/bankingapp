@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
           break;
         } else if (obj.customer_id.localeCompare(this.model.customerid) == 0) {
           let myurl = '/dashboard';
-          this.router.navigateByUrl(myurl).then((e) => {
+          this.router.navigate([myurl, obj.id]).then((e) => {
             if (e) {
               console.log('Navigation is successful!');
             } else {

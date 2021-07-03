@@ -17,7 +17,7 @@ export class TransferFundComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    this.initForm();
   }
 
   // Function to initialize Fund Transfer From
@@ -28,6 +28,14 @@ export class TransferFundComponent implements OnInit {
       amount: ['', [Validators.required]],
       comment: ['']
     });
+  }
+
+  get formControls() {
+    return this.fundTransferFrom.controls;
+  }
+
+  confirm() {
+
   }
 
 }

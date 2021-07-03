@@ -15,7 +15,7 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'dashboard', component: DashboardComponent
+        path: 'dashboard/:id', component: DashboardComponent
       },
       {
         path: 'transfer-fund', component: TransferFundComponent

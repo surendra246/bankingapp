@@ -30,7 +30,7 @@ export class ServicesService {
 
   //fetch login customer details
   getCustomerById(id:any){
-    return this.http.get<any>(this.configUrl+'customers/'+id)
+    return this.http.get<any>(this.configUrl+'customer/'+id)
   }
 
   //fetch customer account details by ID

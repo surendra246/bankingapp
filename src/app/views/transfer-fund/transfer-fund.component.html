@@ -5,39 +5,39 @@
       <h2>Transfer Funds</h2>
     </div>
     <!-- Fund transfer Form -->
-    <form action="">
+    <form [formGroup]="fundTransferFrom">
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Origin Account">
+            <input type="text" class="form-control" placeholder="Origin Account" formControlName="originAccount">
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Destination Account">
+            <input type="text" class="form-control" placeholder="Destination Account" formControlName="destinationAccount">
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Amount">
+            <input type="text" class="form-control" placeholder="Amount" formControlName="amount">
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <textarea name="" class="form-control" id="" cols="5" rows="5" placeholder="Comment"></textarea>
+            <textarea name="" class="form-control" id="" cols="5" rows="5" placeholder="Comment" formControlName="comment"></textarea>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <button class="btn btn-primary w-100">Confirm</button>
+            <button class="btn btn-primary w-100" (click)="confirm()">Confirm</button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import{ ActivatedRoute } from '@angular/router';
 
 import { ServicesService } from '../../core/service.service';
 
@@ -14,11 +14,12 @@ export class DashboardComponent implements OnInit {
 
   //Inject ServicesService into constructor for access API calls
   constructor(
-    private service: ServicesService
+    private service: ServicesService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.service.getCustomerAccountDetails('345678909874').subscribe(
+    this.service.getCustomerAccountDetails(this.route.snapshot.paramMap.get('id')).subscribe(
       res => {
         this.customerDetails = res[0];
       }
