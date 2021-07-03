@@ -1,15 +1,92 @@
 {
   "customers": [
-    { "id": 1, "customer_id": "3456213","password":"password#123"},
-    { "id": 2, "customer_id": "4445672","password":"surendra#123"},
-    { "id": 3, "customer_id": "8883425","password":"rajat#123"},
-    { "id": 4, "customer_id": "9845634","password":"rahmat#123"}
+    {
+      "id": 1,
+      "customer_id": "3456213",
+      "password": "password#123"
+    },
+    {
+      "id": 2,
+      "customer_id": "4445672",
+      "password": "surendra#123"
+    },
+    {
+      "id": 3,
+      "customer_id": "8883425",
+      "password": "rajat#123"
+    },
+    {
+      "id": 4,
+      "customer_id": "9845634",
+      "password": "rahmat#123"
+    }
   ],
   "accounts": [
-    { "customer_id": 1, "account_number":"345678909874" , "bank_name":"HDFC", "Brnach_name": "Australia Sydney"},
-    { "customer_id": 1, "account_number":"834678909851" , "bank_name":"HDFC", "Brnach_name": "Australia Sydney"},
-    { "customer_id": 1, "account_number":"548978909890" , "bank_name":"HDFC", "Brnach_name": "Australia Sydney"},
-    { "customer_id": 1, "account_number":"832789098744" , "bank_name":"HDFC", "Brnach_name": "Australia Sydney"},
-    { "customer_id": 1, "account_number":"739678909859" , "bank_name":"HDFC", "Brnach_name": "Australia Sydney"}
-  ]    
+    {
+      "customer_id": 1,
+      "account_number": "345678909874",
+      "bank_name": "HDFC",
+      "branch_name": "Australia Sydney"
+    },
+    {
+      "customer_id": 2,
+      "account_number": "834678909851",
+      "bank_name": "HDFC",
+      "branch_name": "Australia Sydney"
+    },
+    {
+      "customer_id": 3,
+      "account_number": "548978909890",
+      "bank_name": "HDFC",
+      "branch_name": "Australia Sydney"
+    },
+    {
+      "customer_id": 4,
+      "account_number": "832789098744",
+      "bank_name": "HDFC",
+      "branch_name": "Australia Sydney"
+    }
+  ],
+  "transactions": [
+    {
+      "id": 1,
+      "from_account": "739678909859",
+      "to_account": "832789098744",
+      "amount": "100",
+      "comment": "For Loan",
+      "date": "1625300637"
+    },
+    {
+      "id": 2,
+      "from_account": "739678909859",
+      "to_account": "832789098744",
+      "amount": "100",
+      "comment": "For Loan",
+      "date": "1625300637"
+    },
+    {
+      "id": 3,
+      "from_account": "345678909874",
+      "to_account": "832789098744",
+      "amount": "200",
+      "comment": "For Loan",
+      "date": "1625300637"
+    },
+    {
+      "id": 4,
+      "from_account": "739678909859",
+      "to_account": "832789098744",
+      "amount": "100",
+      "comment": "For Loan",
+      "date": "1625300637"
+    },
+    {
+      "id": 6,
+      "from_account": "739678909859",
+      "to_account": "832789098744",
+      "amount": "100",
+      "comment": "For Loan",
+      "date": "1625300637"
+    }
+  ]
 }

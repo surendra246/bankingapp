@@ -2,5 +2,7 @@
   "/customers": "/customers",
   "/customers/:id": "/customers/:id",
   "/account_details": "/accounts",
-  "/account_details/:id": "/accounts/?account_number=:id"
+  "/account_details/:id": "/accounts/?account_number=:id",
+  "/transactions": "/transactions",
+  "/transactions/:id": "/transactions/?from_account=:id"
 }
