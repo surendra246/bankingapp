@@ -50,29 +50,47 @@ export class TransferFundComponent implements OnInit {
       this.errorMsg = 'Invalid Amount';
       return;
     }
-    this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.destinationAccount).subscribe(
+    this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.originAccount).subscribe(
       res => {
-       if (res.length === 0) {
-         this.error = true;
-         this.success = false;
-         this.errorMsg = 'Invalid Destination Account Details';
-         return;
-       }
-       this.ss.transferFunds(this.fundTransferFrom.value).subscribe(
-        res => {
-          if (res.id) {
-            this.error = false;
-            this.success = true;
-            this.successMsg = 'Fund Transfer Successfull';
-          }
-        },
-        err => {
-          console.log(err);
+        if (res.length === 0) {
+          this.error = true;
+          this.success = false;
+          this.errorMsg = 'Invalid Origin Account Details';
+          return;
         }
+        this.ss.getCustomerAccountDetails(this.fundTransferFrom.value.destinationAccount).subscribe(
+          res => {
+           if (res.length === 0) {
+             this.error = true;
+             this.success = false;
+             this.errorMsg = 'Invalid Destination Account Details';
+             return;
+            }
+            this.ss.transferFunds(this.fundTransferFrom.value).subscribe(
+              res => {
+                if (res.id) {
+                  this.error = false;
+                  this.success = true;
+                  this.successMsg = 'Fund Transfer Successfull';
+                  this.isSubmitted = false;
+                }
+              },
+              err => {
+                this.error = true;
+                this.errorMsg = 'Server Error';
+                return;
+              }
+            )
+          },
+          error => {
+            this.error = true;
+            this.errorMsg = 'Server Error';
+          }
         )
-      },
-      error => {
-        console.log(error);
+      }, err => {
+        this.error = true;
+        this.errorMsg = 'Server Error';
+        return;
       }
     )
   }

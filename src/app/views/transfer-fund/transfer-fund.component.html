@@ -19,7 +19,7 @@
       </div>
     </div>
     <!-- Fund transfer Form -->
-    <form [formGroup]="fundTransferFrom">
+    <form [formGroup]="fundTransferFrom" (ngSubmit)="confirm()">
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
@@ -54,7 +54,7 @@
       <div class="row justify-content-center">
         <div class="col-6">
           <div class="form-group">
-            <button class="btn btn-primary w-100" [disabled]="fundTransferFrom.invalid" (click)="confirm()">Confirm</button>
+            <button class="btn btn-primary w-100" [disabled]="fundTransferFrom.invalid" >Confirm</button>
           </div>
         </div>
       </div>
