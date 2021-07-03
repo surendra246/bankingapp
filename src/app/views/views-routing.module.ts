@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewsComponent } from './views.component';
+import { TransferFundComponent } from './transfer-fund/transfer-fund.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,15 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
+      },
+      {
+        path: 'dashboard/:id', component: DashboardComponent
+      },
+      {
+        path: 'transfer-fund', component: TransferFundComponent
+      },
+      {
+        path: '', redirectTo: '/login', pathMatch: 'full'
       },
     ],
   },

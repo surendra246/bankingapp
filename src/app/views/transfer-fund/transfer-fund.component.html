@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="form-layout">
+    <!-- Page Header -->
+    <div class="form-header text-center">
+      <h2>Transfer Funds</h2>
+    </div>
+    <!-- Fund transfer Form -->
+    <form [formGroup]="fundTransferFrom">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Origin Account" formControlName="originAccount"
+            [class.alert-danger]="(fudTransferFormControls.originAccount.touched || isSubmitted) && fudTransferFormControls.originAccount.errors?.required">
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Destination Account" formControlName="destinationAccount"
+            [class.alert-danger]="(fudTransferFormControls.destinationAccount.touched || isSubmitted) && fudTransferFormControls.destinationAccount.errors?.required">
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Amount" formControlName="amount"
+            [class.alert-danger]="(fudTransferFormControls.amount.touched || isSubmitted) && fudTransferFormControls.amount.errors?.required">
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="form-group">
+            <textarea name="" class="form-control" id="" cols="5" rows="5" placeholder="Comment" formControlName="comment"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <div class="form-group">
+            <button class="btn btn-primary w-100" [disabled]="fundTransferFrom.invalid" (click)="confirm()">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

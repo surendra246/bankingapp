@@ -49,4 +49,9 @@ export class ServicesService {
     return this.http.get<any>(this.configUrl+'transaction/'+key);
   }
 
+  //fetch account details by customer id
+  getAccountByCustomerId(custId: any) {
+    return this.http.get<any>(`${this.configUrl}account_detail/customer/${custId}`);
+  }
+
 }//end service class
